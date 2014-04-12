@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Background <font size="2.5">(See <a href="https://raw.githubusercontent.com/trinker/space_manikin/master/space_manikin.R">just code</a> if you don&#39;t care much about the process) </font></title>
+
+<!-- Styles for R syntax highlighter -->
+<style type="text/css">
+   pre .operator,
+   pre .paren {
+     color: rgb(104, 118, 135)
+   }
+
+   pre .literal {
+     color: #990073
+   }
+
+   pre .number {
+     color: #099;
+   }
+
+   pre .comment {
+     color: #998;
+     font-style: italic
+   }
+
+   pre .keyword {
+     color: #900;
+     font-weight: bold
+   }
+
+   pre .identifier {
+     color: rgb(0, 0, 0);
+   }
+
+   pre .string {
+     color: #d14;
+   }
+</style>
+
+<!-- R syntax highlighter -->
+<script type="text/javascript">
+var hljs=new function(){function m(p){return p.replace(/&/gm,"&amp;").replace(/</gm,"&lt;")}function f(r,q,p){return RegExp(q,"m"+(r.cI?"i":"")+(p?"g":""))}function b(r){for(var p=0;p<r.childNodes.length;p++){var q=r.childNodes[p];if(q.nodeName=="CODE"){return q}if(!(q.nodeType==3&&q.nodeValue.match(/\s+/))){break}}}function h(t,s){var p="";for(var r=0;r<t.childNodes.length;r++){if(t.childNodes[r].nodeType==3){var q=t.childNodes[r].nodeValue;if(s){q=q.replace(/\n/g,"")}p+=q}else{if(t.childNodes[r].nodeName=="BR"){p+="\n"}else{p+=h(t.childNodes[r])}}}if(/MSIE [678]/.test(navigator.userAgent)){p=p.replace(/\r/g,"\n")}return p}function a(s){var r=s.className.split(/\s+/);r=r.concat(s.parentNode.className.split(/\s+/));for(var q=0;q<r.length;q++){var p=r[q].replace(/^language-/,"");if(e[p]){return p}}}function c(q){var p=[];(function(s,t){for(var r=0;r<s.childNodes.length;r++){if(s.childNodes[r].nodeType==3){t+=s.childNodes[r].nodeValue.length}else{if(s.childNodes[r].nodeName=="BR"){t+=1}else{if(s.childNodes[r].nodeType==1){p.push({event:"start",offset:t,node:s.childNodes[r]});t=arguments.callee(s.childNodes[r],t);p.push({event:"stop",offset:t,node:s.childNodes[r]})}}}}return t})(q,0);return p}function k(y,w,x){var q=0;var z="";var s=[];function u(){if(y.length&&w.length){if(y[0].offset!=w[0].offset){return(y[0].offset<w[0].offset)?y:w}else{return w[0].event=="start"?y:w}}else{return y.length?y:w}}function t(D){var A="<"+D.nodeName.toLowerCase();for(var B=0;B<D.attributes.length;B++){var C=D.attributes[B];A+=" "+C.nodeName.toLowerCase();if(C.value!==undefined&&C.value!==false&&C.value!==null){A+='="'+m(C.value)+'"'}}return A+">"}while(y.length||w.length){var v=u().splice(0,1)[0];z+=m(x.substr(q,v.offset-q));q=v.offset;if(v.event=="start"){z+=t(v.node);s.push(v.node)}else{if(v.event=="stop"){var p,r=s.length;do{r--;p=s[r];z+=("</"+p.nodeName.toLowerCase()+">")}while(p!=v.node);s.splice(r,1);while(r<s.length){z+=t(s[r]);r++}}}}return z+m(x.substr(q))}function j(){function q(x,y,v){if(x.compiled){return}var u;var s=[];if(x.k){x.lR=f(y,x.l||hljs.IR,true);for(var w in x.k){if(!x.k.hasOwnProperty(w)){continue}if(x.k[w] instanceof Object){u=x.k[w]}else{u=x.k;w="keyword"}for(var r in u){if(!u.hasOwnProperty(r)){continue}x.k[r]=[w,u[r]];s.push(r)}}}if(!v){if(x.bWK){x.b="\\b("+s.join("|")+")\\s"}x.bR=f(y,x.b?x.b:"\\B|\\b");if(!x.e&&!x.eW){x.e="\\B|\\b"}if(x.e){x.eR=f(y,x.e)}}if(x.i){x.iR=f(y,x.i)}if(x.r===undefined){x.r=1}if(!x.c){x.c=[]}x.compiled=true;for(var t=0;t<x.c.length;t++){if(x.c[t]=="self"){x.c[t]=x}q(x.c[t],y,false)}if(x.starts){q(x.starts,y,false)}}for(var p in e){if(!e.hasOwnProperty(p)){continue}q(e[p].dM,e[p],true)}}function d(B,C){if(!j.called){j();j.called=true}function q(r,M){for(var L=0;L<M.c.length;L++){if((M.c[L].bR.exec(r)||[null])[0]==r){return M.c[L]}}}function v(L,r){if(D[L].e&&D[L].eR.test(r)){return 1}if(D[L].eW){var M=v(L-1,r);return M?M+1:0}return 0}function w(r,L){return L.i&&L.iR.test(r)}function K(N,O){var M=[];for(var L=0;L<N.c.length;L++){M.push(N.c[L].b)}var r=D.length-1;do{if(D[r].e){M.push(D[r].e)}r--}while(D[r+1].eW);if(N.i){M.push(N.i)}return f(O,M.join("|"),true)}function p(M,L){var N=D[D.length-1];if(!N.t){N.t=K(N,E)}N.t.lastIndex=L;var r=N.t.exec(M);return r?[M.substr(L,r.index-L),r[0],false]:[M.substr(L),"",true]}function z(N,r){var L=E.cI?r[0].toLowerCase():r[0];var M=N.k[L];if(M&&M instanceof Array){return M}return false}function F(L,P){L=m(L);if(!P.k){return L}var r="";var O=0;P.lR.lastIndex=0;var M=P.lR.exec(L);while(M){r+=L.substr(O,M.index-O);var N=z(P,M);if(N){x+=N[1];r+='<span class="'+N[0]+'">'+M[0]+"</span>"}else{r+=M[0]}O=P.lR.lastIndex;M=P.lR.exec(L)}return r+L.substr(O,L.length-O)}function J(L,M){if(M.sL&&e[M.sL]){var r=d(M.sL,L);x+=r.keyword_count;return r.value}else{return F(L,M)}}function I(M,r){var L=M.cN?'<span class="'+M.cN+'">':"";if(M.rB){y+=L;M.buffer=""}else{if(M.eB){y+=m(r)+L;M.buffer=""}else{y+=L;M.buffer=r}}D.push(M);A+=M.r}function G(N,M,Q){var R=D[D.length-1];if(Q){y+=J(R.buffer+N,R);return false}var P=q(M,R);if(P){y+=J(R.buffer+N,R);I(P,M);return P.rB}var L=v(D.length-1,M);if(L){var O=R.cN?"</span>":"";if(R.rE){y+=J(R.buffer+N,R)+O}else{if(R.eE){y+=J(R.buffer+N,R)+O+m(M)}else{y+=J(R.buffer+N+M,R)+O}}while(L>1){O=D[D.length-2].cN?"</span>":"";y+=O;L--;D.length--}var r=D[D.length-1];D.length--;D[D.length-1].buffer="";if(r.starts){I(r.starts,"")}return R.rE}if(w(M,R)){throw"Illegal"}}var E=e[B];var D=[E.dM];var A=0;var x=0;var y="";try{var s,u=0;E.dM.buffer="";do{s=p(C,u);var t=G(s[0],s[1],s[2]);u+=s[0].length;if(!t){u+=s[1].length}}while(!s[2]);if(D.length>1){throw"Illegal"}return{r:A,keyword_count:x,value:y}}catch(H){if(H=="Illegal"){return{r:0,keyword_count:0,value:m(C)}}else{throw H}}}function g(t){var p={keyword_count:0,r:0,value:m(t)};var r=p;for(var q in e){if(!e.hasOwnProperty(q)){continue}var s=d(q,t);s.language=q;if(s.keyword_count+s.r>r.keyword_count+r.r){r=s}if(s.keyword_count+s.r>p.keyword_count+p.r){r=p;p=s}}if(r.language){p.second_best=r}return p}function i(r,q,p){if(q){r=r.replace(/^((<[^>]+>|\t)+)/gm,function(t,w,v,u){return w.replace(/\t/g,q)})}if(p){r=r.replace(/\n/g,"<br>")}return r}function n(t,w,r){var x=h(t,r);var v=a(t);var y,s;if(v){y=d(v,x)}else{return}var q=c(t);if(q.length){s=document.createElement("pre");s.innerHTML=y.value;y.value=k(q,c(s),x)}y.value=i(y.value,w,r);var u=t.className;if(!u.match("(\\s|^)(language-)?"+v+"(\\s|$)")){u=u?(u+" "+v):v}if(/MSIE [678]/.test(navigator.userAgent)&&t.tagName=="CODE"&&t.parentNode.tagName=="PRE"){s=t.parentNode;var p=document.createElement("div");p.innerHTML="<pre><code>"+y.value+"</code></pre>";t=p.firstChild.firstChild;p.firstChild.cN=s.cN;s.parentNode.replaceChild(p.firstChild,s)}else{t.innerHTML=y.value}t.className=u;t.result={language:v,kw:y.keyword_count,re:y.r};if(y.second_best){t.second_best={language:y.second_best.language,kw:y.second_best.keyword_count,re:y.second_best.r}}}function o(){if(o.called){return}o.called=true;var r=document.getElementsByTagName("pre");for(var p=0;p<r.length;p++){var q=b(r[p]);if(q){n(q,hljs.tabReplace)}}}function l(){if(window.addEventListener){window.addEventListener("DOMContentLoaded",o,false);window.addEventListener("load",o,false)}else{if(window.attachEvent){window.attachEvent("onload",o)}else{window.onload=o}}}var e={};this.LANGUAGES=e;this.highlight=d;this.highlightAuto=g;this.fixMarkup=i;this.highlightBlock=n;this.initHighlighting=o;this.initHighlightingOnLoad=l;this.IR="[a-zA-Z][a-zA-Z0-9_]*";this.UIR="[a-zA-Z_][a-zA-Z0-9_]*";this.NR="\\b\\d+(\\.\\d+)?";this.CNR="\\b(0[xX][a-fA-F0-9]+|(\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)";this.BNR="\\b(0b[01]+)";this.RSR="!|!=|!==|%|%=|&|&&|&=|\\*|\\*=|\\+|\\+=|,|\\.|-|-=|/|/=|:|;|<|<<|<<=|<=|=|==|===|>|>=|>>|>>=|>>>|>>>=|\\?|\\[|\\{|\\(|\\^|\\^=|\\||\\|=|\\|\\||~";this.ER="(?![\\s\\S])";this.BE={b:"\\\\.",r:0};this.ASM={cN:"string",b:"'",e:"'",i:"\\n",c:[this.BE],r:0};this.QSM={cN:"string",b:'"',e:'"',i:"\\n",c:[this.BE],r:0};this.CLCM={cN:"comment",b:"//",e:"$"};this.CBLCLM={cN:"comment",b:"/\\*",e:"\\*/"};this.HCM={cN:"comment",b:"#",e:"$"};this.NM={cN:"number",b:this.NR,r:0};this.CNM={cN:"number",b:this.CNR,r:0};this.BNM={cN:"number",b:this.BNR,r:0};this.inherit=function(r,s){var p={};for(var q in r){p[q]=r[q]}if(s){for(var q in s){p[q]=s[q]}}return p}}();hljs.LANGUAGES.cpp=function(){var a={keyword:{"false":1,"int":1,"float":1,"while":1,"private":1,"char":1,"catch":1,"export":1,virtual:1,operator:2,sizeof:2,dynamic_cast:2,typedef:2,const_cast:2,"const":1,struct:1,"for":1,static_cast:2,union:1,namespace:1,unsigned:1,"long":1,"throw":1,"volatile":2,"static":1,"protected":1,bool:1,template:1,mutable:1,"if":1,"public":1,friend:2,"do":1,"return":1,"goto":1,auto:1,"void":2,"enum":1,"else":1,"break":1,"new":1,extern:1,using:1,"true":1,"class":1,asm:1,"case":1,typeid:1,"short":1,reinterpret_cast:2,"default":1,"double":1,register:1,explicit:1,signed:1,typename:1,"try":1,"this":1,"switch":1,"continue":1,wchar_t:1,inline:1,"delete":1,alignof:1,char16_t:1,char32_t:1,constexpr:1,decltype:1,noexcept:1,nullptr:1,static_assert:1,thread_local:1,restrict:1,_Bool:1,complex:1},built_in:{std:1,string:1,cin:1,cout:1,cerr:1,clog:1,stringstream:1,istringstream:1,ostringstream:1,auto_ptr:1,deque:1,list:1,queue:1,stack:1,vector:1,map:1,set:1,bitset:1,multiset:1,multimap:1,unordered_set:1,unordered_map:1,unordered_multiset:1,unordered_multimap:1,array:1,shared_ptr:1}};return{dM:{k:a,i:"</",c:[hljs.CLCM,hljs.CBLCLM,hljs.QSM,{cN:"string",b:"'\\\\?.",e:"'",i:"."},{cN:"number",b:"\\b(\\d+(\\.\\d*)?|\\.\\d+)(u|U|l|L|ul|UL|f|F)"},hljs.CNM,{cN:"preprocessor",b:"#",e:"$"},{cN:"stl_container",b:"\\b(deque|list|queue|stack|vector|map|set|bitset|multiset|multimap|unordered_map|unordered_set|unordered_multiset|unordered_multimap|array)\\s*<",e:">",k:a,r:10,c:["self"]}]}}}();hljs.LANGUAGES.r={dM:{c:[hljs.HCM,{cN:"number",b:"\\b0[xX][0-9a-fA-F]+[Li]?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+(?:[eE][+\\-]?\\d*)?L\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+\\.(?!\\d)(?:i\\b)?",e:hljs.IMMEDIATE_RE,r:1},{cN:"number",b:"\\b\\d+(?:\\.\\d*)?(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\.\\d+(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"keyword",b:"(?:tryCatch|library|setGeneric|setGroupGeneric)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\.",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\d+(?![\\w.])",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\b(?:function)",e:hljs.IMMEDIATE_RE,r:2},{cN:"keyword",b:"(?:if|in|break|next|repeat|else|for|return|switch|while|try|stop|warning|require|attach|detach|source|setMethod|setClass)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"literal",b:"(?:NA|NA_integer_|NA_real_|NA_character_|NA_complex_)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"literal",b:"(?:NULL|TRUE|FALSE|T|F|Inf|NaN)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"identifier",b:"[a-zA-Z.][a-zA-Z0-9._]*\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"<\\-(?!\\s*\\d)",e:hljs.IMMEDIATE_RE,r:2},{cN:"operator",b:"\\->|<\\-",e:hljs.IMMEDIATE_RE,r:1},{cN:"operator",b:"%%|~",e:hljs.IMMEDIATE_RE},{cN:"operator",b:">=|<=|==|!=|\\|\\||&&|=|\\+|\\-|\\*|/|\\^|>|<|!|&|\\||\\$|:",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"%",e:"%",i:"\\n",r:1},{cN:"identifier",b:"`",e:"`",r:0},{cN:"string",b:'"',e:'"',c:[hljs.BE],r:0},{cN:"string",b:"'",e:"'",c:[hljs.BE],r:0},{cN:"paren",b:"[[({\\])}]",e:hljs.IMMEDIATE_RE,r:0}]}};
+hljs.initHighlightingOnLoad();
+</script>
+
+<!-- MathJax scripts -->
+<script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 13px;
+}
+
+body {
+  max-width: 800px;
+  margin: auto;
+  line-height: 20px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre, img {
+  max-width: 100%;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code {
+  font-size: 92%;
+  border: 1px solid #ccc;
+}
+
+code[class] {
+  background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+</style>
+
+
+
+</head>
+
+<body>
+<p>In this post you will learn how to:</p>
+
+<ol>
+<li>Create your own quasi-shape file<br/></li>
+<li>Plot your homemade quasi-shape file in <code>ggplot2</code></li>
+<li>Add an external svg/ps graphic to a plot<br/></li>
+<li>Change a <code>grid</code> grob&#39;s color and alpha<br/></li>
+</ol>
+
+<hr/>
+
+<h2>Background <font size="2.5">(See <a href="https://raw.githubusercontent.com/trinker/space_manikin/master/space_manikin.R">just code</a> if you don&#39;t care much about the process) </font></h2>
+
+<p>I started my journey wanting to replicate a graphic called a <em>space manikin</em> by <a href="">McNeil (2005)</a> and fill areas in that graphic like a choropleth.  I won&#39;t share the image from McNeil&#39;s book as it&#39;s his intellectual property but know that the graphic is from a gesturing book that divides the body up into zones (p. 275).  To get a sense of what the manikin looks like here is the <code>ggplot2</code> version of it:</p>
+
+<div class="figure">
+<img src="https://raw.githubusercontent.com/trinker/space_manikin/master/images/manikin1.png" width="300" height="300">
+<p id="fig1" style="margin-bottom: 3em;"><em>Figure 1</em>: ggplot2 Version of McNeil&rsquo;s (2005) Space Manikin</p>
+</div>
+
+<p>While this is a map of areas of a body you can see where this could be extended to any number of spatial tasks such as mapping the layout of a room.</p>
+
+<hr/>
+
+<h2>1. Creating a Quasi-Shape File</h2>
+
+<p>So I figured &ldquo;zones&rdquo; that&#39;s about like states on a map.  I have toyed with <a href="http://trinkerrstuff.wordpress.com/2013/07/05/ggplot2-chloropleth-of-supreme-court-decisions-an-tutorial/">choropleth maps</a> of the US in the past and figured I&#39;d generalize this learning.  The difference is I&#39;d have to make the shape file myself as the <a href="maps"><a href="http://cran.r-project.org/web/packages/maps/index.html">http://cran.r-project.org/web/packages/maps/index.html</a></a> package doesn&#39;t seem to have McNeil&#39;s space manikin.</p>
+
+<p>Let&#39;s look at what <code>ggplot2</code> needs from the <code>maps</code> package:</p>
+
+<pre><code class="r">library(maps); library(ggplot2)
+head(map_data(&quot;state&quot;))
+</code></pre>
+
+<pre><code>##     long   lat group order  region subregion
+## 1 -87.46 30.39     1     1 alabama      &lt;NA&gt;
+## 2 -87.48 30.37     1     2 alabama      &lt;NA&gt;
+## 3 -87.53 30.37     1     3 alabama      &lt;NA&gt;
+## 4 -87.53 30.33     1     4 alabama      &lt;NA&gt;
+## 5 -87.57 30.33     1     5 alabama      &lt;NA&gt;
+## 6 -87.59 30.33     1     6 alabama      &lt;NA&gt;
+</code></pre>
+
+<p>Hmm coordinates, names of regions, and order to connect the coordinates.  I figured I can handle that.  I don&#39;t 100% know what a shape file is, mostly that it&#39;s a file that makes shapes.  What we&#39;re making may or may not technically be a shape file but know we&#39;re going to map shapes in <code>ggplot2</code> (I use the quasi to avoid the wrath of those who do know precisely what a shape file is).  </p>
+
+<p>I needed to make the zones around an image of a person so I first grabbed a free png silhouette from: <a href="http://www.flaticon.com/free-icon/standing-frontal-man-silhouette_10633">http://www.flaticon.com/free-icon/standing-frontal-man-silhouette_10633</a>.  I then knew I&#39;d need to add some lines and figure out the coordinates of the outlines of each cell.  So I read the raster image into R, plotted in <code>ggplot2</code> and added lots of grid lines for good measure.  Here&#39;s what I wound up with:</p>
+
+<pre><code class="r">library(png); library(grid); library(qdap)
+url_dl(url=&quot;http://i.imgur.com/eZ76jcu.png&quot;)
+file.rename(&quot;eZ76jcu.png&quot;, &quot;body.png&quot;)
+img &lt;- rasterGrob(readPNG(&quot;body.png&quot;), 0, 0, 1, 1, just=c(&quot;left&quot;,&quot;bottom&quot;))
+ggplot(data.frame(x=c(0, 1), y=c(0, 1)), aes(x=x, y=y)) + 
+    geom_point() +
+    annotation_custom(img, 0, 1, 0, 1) + 
+    scale_x_continuous(breaks=seq(0, 1, by=.05))+ 
+    scale_y_continuous(breaks=seq(0, 1, by=.05)) + theme_bw() +
+    theme(axis.text.x=element_text(angle = 90, hjust = 0, vjust=0))
+</code></pre>
+
+<p><img src="http://dl.dropboxusercontent.com/u/61803503/wp/figure/unnamed-chunk-2.png" alt="plot of chunk unnamed-chunk-2"/> </p>
+
+<p id="fig2" style="margin-bottom: 3em;"><em>Figure 2</em>: Silhouette from ggplot2 With Grid Lines</p>
+
+<hr/>
+
+<h3>1b. Dirty Deeds Done Cheap</h3>
+
+<p>I needed to get reference lines on the plot so I could begin recording coordinates.  Likely there&#39;s a better process but this is how I approached it and it worked.  I exported the ggplot in <a href="#fig2">Figure 2</a> into (<a href="http://www.dramabutton.com/">GASP</a>) Microsoft Word (I may have just lost a few die hard command line folks).  I added lines and figured out the coordinates of the lines.  It looked something like this:</p>
+
+<div class="figure">
+<img src="https://raw.githubusercontent.com/trinker/space_manikin/master/images/manikin.png" width="500" height="300">
+<p id="fig3" style="margin-bottom: 3em;"><em>Figure 3</em>: Silhouette from ggplot2 with MS Word Augmented Border Lines</p>
+</div>
+
+<p>After that I began the tedious task of figuring out the corners of each of the shapes (&ldquo;zones&rdquo;) in the space manikin.  Using <a href="#fig3">Figure 3</a> and a list structure in R I mapped each of the corners, the approximate shape centers, and the order to plot the coordinates in for each shape.  This is the code for corners:</p>
+
+<pre><code class="r">library(qdap)
+dat &lt;- list(
+    `01`=data.frame(x=c(.4, .4, .6, .6), y=c(.67, .525, .525, .67)),
+    `02`=data.frame(x=c(.35, .4, .6, .65), y=c(.75, .67, .67, .75)),
+    `03`=data.frame(x=c(.6, .65, .65, .6), y=c(.525, .475, .75, .67)),
+    `04`=data.frame(x=c(.4, .35, .65, .6), y=c(.525, .475, .475, .525)),
+    `05`=data.frame(x=c(.35, .35, .4, .4), y=c(.75, .475, .525, .67)),
+    `06`=data.frame(x=c(.4, .4, .6, .6), y=c(.87, .75, .75, .87)),
+    `07`=data.frame(x=c(.6, .6, .65, .65, .73, .73), y=c(.87, .75, .75, .67, .67, .87)),
+    `08`=data.frame(x=c(.65, .65, .73, .73), y=c(.67, .525, .525, .67)),
+    `09`=data.frame(x=c(.6, .6, .73, .73, .65, .65), y=c(.475, .28, .28, .525, .525, .475)),
+    `10`=data.frame(x=c(.4, .4, .6, .6), y=c(.475, .28, .28, .475)),
+    `11`=data.frame(x=c(.27, .27, .4, .4, .35, .35), y=c(.525, .28, .28, .475, .475, .525)),
+    `12`=data.frame(x=c(.27, .27, .35, .35), y=c(.67, .525, .525, .67)),
+    `13`=data.frame(x=c(.27, .27, .35, .35, .4, .4), y=c(.87, .67, .67, .75, .75, .87)),
+    `14`=data.frame(x=c(.35, .35, .65, .65), y=c(1, .87, .87, 1)),
+    `15`=data.frame(x=c(.65, .65, .73, .73, 1, 1), y=c(1, .87, .87, .75, .75, 1)),
+    `16`=data.frame(x=c(.73, .73, 1, 1), y=c(.75, .475, .475, .75)),
+    `17`=data.frame(x=c(.65, .65, 1, 1, .73, .73), y=c(.28, 0, 0, .475, .475, .28)),
+    `18`=data.frame(x=c(.35, .35, .65, .65), y=c(.28, 0, 0, .28)),
+    `19`=data.frame(x=c(0, 0, .35, .35, .27, .27), y=c(.475, 0, 0, .28, .28, .475)),
+    `20`=data.frame(x=c(0, 0, .27, .27), y=c(.75, .475, .475, .75)),
+    `21`=data.frame(x=c(0, 0, .27, .27, .35, .35), y=c(1, .75, .75, .87, .87, 1))
+)
+
+dat &lt;- lapply(dat, function(x) {
+    x$order &lt;- 1:nrow(x)
+    x
+})
+
+space.manikin.shape &lt;- list_df2df(dat, &quot;id&quot;)[, c(2, 3, 1, 4)]
+</code></pre>
+
+<p>And the code for the centers:</p>
+
+<pre><code class="r">centers &lt;- data.frame(
+    id = unique(space.manikin.shape$id),
+    center.x=c(.5, .5, .625, .5, .375, .5, .66, .69, .66, .5, .34, .31, 
+        .34, .5, .79, .815, .79, .5, .16, .135, .16),
+    center.y=c(.597, .71, .5975, .5, .5975, .82, .81, .5975, .39, .3775, .39, 
+        .5975, .81, .935, .89, .6025, .19, .14, .19, .6025, .89)
+)
+</code></pre>
+
+<p>There you have it folks your very own quasi-shape file.  Celebrate the fruits of your labor by plotting that bad oscar.</p>
+
+<hr/>
+
+<h2>2. Plot Your Homemade Quasi-Shape File</h2>
+
+<pre><code class="r">ggplot(centers) + annotation_custom(img,0,1,0,1) +
+    geom_map(aes(map_id = id), map = space.manikin.shape, colour=&quot;black&quot;, fill=NA) +
+    theme_bw()+ 
+    expand_limits(space.manikin.shape) +
+    geom_text(data=centers, aes(center.x, center.y, label = id), color=&quot;grey60&quot;) 
+</code></pre>
+
+<p><img src="http://dl.dropboxusercontent.com/u/61803503/wp/figure/unnamed-chunk-5.png" alt="plot of chunk unnamed-chunk-5"/> </p>
+
+<p id="fig4" style="margin-bottom: 3em;"><em>Figure 4</em>: Plotting the Quasi-Shape File and a Raster Image</p>
+
+<p>Then I said I may want to tone down the color of the silhouette a bit so I can plot geoms atop without distraction.  Here&#39;s that attempt.</p>
+
+<pre><code class="r">img[[&quot;raster&quot;]][img[[&quot;raster&quot;]] == &quot;#0E0F0FFF&quot;] &lt;- &quot;#E7E7E7&quot;
+
+ggplot(centers) + annotation_custom(img,0,1,0,1) +
+    geom_map(aes(map_id = id), map = space.manikin.shape, colour=&quot;black&quot;, fill=NA) +
+    theme_bw()+ 
+    expand_limits(space.manikin.shape) +
+    geom_text(data=centers, aes(center.x, center.y, label = id), color=&quot;grey60&quot;) 
+</code></pre>
+
+<p><img src="http://dl.dropboxusercontent.com/u/61803503/wp/figure/unnamed-chunk-6.png" alt="plot of chunk unnamed-chunk-6"/> </p>
+
+<p id="fig5" style="margin-bottom: 3em;"><em>Figure 5</em>: Altered Raster Image Color</p>
+
+<hr/>
+
+<h2>3. Add an External svg/ps</h2>
+
+<p>I realized quickly a raster was messy.  I read up a bit on them in the R Journal (<a href="http://journal.r-project.org/archive/2011-1/RJournal_2011-1_Murrell.pdf">click here</a>).  In the process of reading and fooling around with <a href="http://picasa.google.com/">Picas</a> I turned my original silhouette (body.png) blue and couldn&#39;t fix him.  I headed back to <a href="http://www.flaticon.com/free-icon/standing-frontal-man-silhouette_10633">http://www.flaticon.com/free-icon/standing-frontal-man-silhouette_10633</a> to download another.  In this act I saw you could download a svg file of the png.  I thought maybe this will be less messier and easier to change colors.  This lead me to a google search and finding the <code>grImport</code> package after seeing his <a href="https://stat.ethz.ch/pipermail/r-sig-geo/2009-February/005003.html">listserve post</a>.  And then I saw an article from Paul <a href="http://www.jstatsoft.org/v30/i04/">Murrell (2009)</a> and figured I could turn the svg (I didn&#39;t realize what svg was until I opened it in Notepad++) into a ps file and read into R and convert to a flexible grid grob.</p>
+
+<p>Probably there are numerous ways to convert an svg to a ps file but I chose a <a href="https://cloudconvert.org/svg-to-ps">cloud convert service</a>.  After I read the file in with <code>grImport</code> per the Paul <a href="http://www.jstatsoft.org/v30/i04/">Murrell (2009)</a> article.  You&#39;re going to have to download the ps file <a href="https://github.com/trinker/space_manikin/raw/master/images/being.ps">HERE</a> and get to your working directory.</p>
+
+<pre><code class="r">browseURL(&quot;https://github.com/trinker/space_manikin/raw/master/images/being.ps&quot;)
+## Move that file from your downloads to your working directory.
+## Sorry I don&#39;t know how to automate this.
+library(grImport)
+
+## Convert to xml
+PostScriptTrace(&quot;being.ps&quot;)
+
+## Read back in and convert to a grob
+being_img &lt;- pictureGrob(readPicture(&quot;being.ps.xml&quot;))
+
+## Plot it
+ggplot(centers) + annotation_custom(being_img,0,1,0,1) +
+    geom_map(aes(map_id = id), map = space.manikin.shape, 
+        colour=&quot;black&quot;, fill=NA) +
+    theme_bw()+ 
+    expand_limits(space.manikin.shape) +
+    geom_text(data=centers, aes(center.x, center.y, 
+        label = id), color=&quot;grey60&quot;) 
+</code></pre>
+
+<p><img src="http://dl.dropboxusercontent.com/u/61803503/wp/figure/unnamed-chunk-7.png" alt="plot of chunk unnamed-chunk-7"/> </p>
+
+<p id="fig6" style="margin-bottom: 3em;"><em>Figure 6</em>: Quasi-Shape File with Grob Image Rather than Raster</p>
+
+<hr/>
+
+<h2>4. Change a <code>grid</code> Grob&#39;s Color and Alpha</h2>
+
+<p>Now we have a flexible grob we can mess around with colors and alpha until our heart&#39;s content.</p>
+
+<p><code>str</code> is our friend to figure out where and how to mess with the grob (<code>str(being_img)</code>).  That leads me to the following changes to the image to adjust color and/or alpha (transparency).</p>
+
+<pre><code class="r">being_img[[&quot;children&quot;]][[1]][[c(&quot;gp&quot;, &quot;fill&quot;)]] &lt;- 
+  being_img[[&quot;children&quot;]][[2]][[c(&quot;gp&quot;, &quot;fill&quot;)]] &lt;- &quot;black&quot;
+
+being_img[[&quot;children&quot;]][[1]][[c(&quot;gp&quot;, &quot;alpha&quot;)]] &lt;- 
+  being_img[[&quot;children&quot;]][[2]][[c(&quot;gp&quot;, &quot;alpha&quot;)]] &lt;- .2
+
+## Plot it
+ggplot(centers) + annotation_custom(being_img,0,1,0,1) +
+    geom_map(aes(map_id = id), map = space.manikin.shape, 
+        colour=&quot;black&quot;, fill=NA) +
+    theme_bw()+ 
+    expand_limits(space.manikin.shape) +
+    geom_text(data=centers, aes(center.x, center.y, 
+        label = id), color=&quot;grey60&quot;) 
+</code></pre>
+
+<p><img src="http://dl.dropboxusercontent.com/u/61803503/wp/figure/unnamed-chunk-8.png" alt="plot of chunk unnamed-chunk-8"/> </p>
+
+<p id="fig6" style="margin-bottom: 3em;"><em>Figure 7</em>: Quasi-Shape File with Grob Image Alpha = .2</p>
+
+<hr/>
+
+<h2>Let&#39;s Have Some Fun</h2>
+
+<p>Let&#39;s make it into a choropleth and a density plot.  We&#39;ll make some fake fill values to fill with.</p>
+
+<pre><code class="r">set.seed(10)
+centers[, &quot;Frequency&quot;] &lt;- rnorm(nrow(centers))
+
+being_img[[&quot;children&quot;]][[1]][[c(&quot;gp&quot;, &quot;alpha&quot;)]] &lt;- 
+  being_img[[&quot;children&quot;]][[2]][[c(&quot;gp&quot;, &quot;alpha&quot;)]] &lt;- .25
+
+ggplot(centers, aes(fill=Frequency)) +
+    geom_map(aes(map_id = id), map = space.manikin.shape, 
+        colour=&quot;black&quot;) +
+    scale_fill_gradient2(high=&quot;red&quot;, low=&quot;blue&quot;) +
+    theme_bw()+ 
+    expand_limits(space.manikin.shape) +
+    geom_text(data=centers, aes(center.x, center.y, 
+        label = id), color=&quot;black&quot;) + 
+    annotation_custom(being_img,0,1,0,1) 
+</code></pre>
+
+<p><img src="http://dl.dropboxusercontent.com/u/61803503/wp/figure/unnamed-chunk-9.png" alt="plot of chunk unnamed-chunk-9"/> </p>
+
+<p id="fig7" style="margin-bottom: 3em;"><em>Figure 8</em>: Quasi-Shape File as a Choropleth</p>
+
+<pre><code class="r">set.seed(10)
+centers[, &quot;Frequency2&quot;] &lt;- sample(seq(10, 150, by=20, ), nrow(centers), TRUE)
+
+centers2 &lt;- centers[rep(1:nrow(centers), centers[, &quot;Frequency2&quot;]), ]
+
+ggplot(centers2) +
+#       geom_map(aes(map_id = id), map = space.manikin.shape, 
+#       colour=&quot;grey65&quot;, fill=&quot;white&quot;) +
+    stat_density2d(data = centers2, 
+        aes(x=center.x, y=center.y, alpha=..level.., 
+        fill=..level..), size=2, bins=12, geom=&quot;polygon&quot;) + 
+    scale_fill_gradient(low = &quot;yellow&quot;, high = &quot;red&quot;) +
+    scale_alpha(range = c(0.00, 0.5), guide = FALSE) +
+    theme_bw()+ 
+    expand_limits(space.manikin.shape) +
+    geom_text(data=centers, aes(center.x, center.y, 
+        label = id), color=&quot;black&quot;) + 
+    annotation_custom(being_img,0,1,0,1) +
+    geom_density2d(data = centers2, aes(x=center.x, 
+        y=center.y), colour=&quot;black&quot;, bins=8, show_guide=FALSE) 
+</code></pre>
+
+<p><img src="http://dl.dropboxusercontent.com/u/61803503/wp/figure/unnamed-chunk-10.png" alt="plot of chunk unnamed-chunk-10"/> </p>
+
+<p id="fig8" style="margin-bottom: 3em;"><em>Figure 9</em>: Quasi-Shape File as a Density Plot</p>
+    
+
+<p>Good times were had by all.</p>
+
+<hr/>
+
+<p><em><font size="2">Created using the <a href="https://github.com/trinker/reports" target="_blank">reports</a> (<a href="http://github.com/trinker/reports">Rinker, 2013</a>) package</font></em></p>
+
+<p><font size="2">Get the .Rmd file <a href="https://github.com/trinker/space_manikin/blob/master/space_manikin.Rmd" target="_blank">here</a></font></p>
+
+<hr/>
+
+<h2>References</h2>
+
+<ul>
+<li>D.  McNeil,   (2005) Gesture &amp; Thought.</li>
+<li>Paul Murrell,   (2009) Importing Vector Graphics: The {grImport} Package for {R}.  <em>Journal of Statistical Software</em>  <strong>30</strong>  (4)   1-37  <a href="http://www.jstatsoft.org/v30/i04/"><a href="http://www.jstatsoft.org/v30/i04/">http://www.jstatsoft.org/v30/i04/</a></a></li>
+<li>Tyler Rinker,   (2013) {reports}: {P}ackage to asssist in report writing.  <a href="http://github.com/trinker/reports"><a href="http://github.com/trinker/reports">http://github.com/trinker/reports</a></a></li>
+</ul>
+
+</body>
+
+</html>
